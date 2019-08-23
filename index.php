@@ -21,7 +21,15 @@
     <script type="text/javascript">
       let scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: false });
       scanner.addListener('scan', function (content) {
-        alert(content);
+        var rs = content.split(";");
+        var d = new Object();
+
+        d.Name = rs[0];
+        d.NIM = rs[1];
+        d.Email = rs[2];
+        d.Phone = rs[3];
+
+        alert(JSON.stringify(d));
       });
       Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 0) {
