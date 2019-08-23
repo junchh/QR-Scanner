@@ -28,6 +28,7 @@
         d.NIM = rs[1];
         d.Email = rs[2];
         d.Phone = rs[3];
+        d.Line = rs[4];
 
         alert(JSON.stringify(d));
       });
