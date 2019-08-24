@@ -31,7 +31,7 @@
         d.line = rs[4];
 
         $.post('https://line-bot-eduka-system.herokuapp.com/regis/' + d.name +'/' + d.nim + '/' + d.email + '/' + d.phone + '/' + d.line, d, function(response, status){
-          if(status=="204"){
+          if(status==204){
             alert('OK!');
           }
         });
