@@ -30,7 +30,7 @@
         d.phone = rs[3];
         d.line = rs[4];
 
-        $.post('test.php', d, function(response, status){
+        $.post('https://line-bot-eduka-system.herokuapp.com/regis/', d, function(response, status){
           if(status=="204"){
             alert('OK!');
           }
