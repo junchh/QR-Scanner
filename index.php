@@ -24,13 +24,17 @@
         var rs = content.split(";");
         var d = new Object();
 
-        d.Name = rs[0];
-        d.NIM = rs[1];
-        d.Email = rs[2];
-        d.Phone = rs[3];
-        d.Line = rs[4];
+        d.name = rs[0];
+        d.nim = rs[1];
+        d.email = rs[2];
+        d.phone = rs[3];
+        d.line = rs[4];
 
-        alert(JSON.stringify(d));
+        $.post('test.php', d, function(response, status){
+          if(status=="204"){
+            alert('OK!');
+          }
+        });
       });
       Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 0) {
